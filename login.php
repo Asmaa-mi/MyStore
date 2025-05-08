@@ -48,7 +48,7 @@ if($_SERVER['REQUEST_METHOD']== "POST") {
         </div>
         <br>
         <div>
-            <button type="submit">Submit</button>
+            <button type="submit"><a href="index.php">Submit</a></button>
         </div>
         <br>
         <a href="register.php">Create Account</a>
