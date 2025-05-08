@@ -1,36 +1,26 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$databaseName = "mystore";
-$errors = [];
-// Create connection
-$conn = new mysqli($servername, $username, $password, $databaseName);
+session_start();
+$conn = mysqli_connect("localhost", "root", "", "mystore");
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-$sql = "SELECT * FROM products";
-$res = $conn->query($sql);
-$users = [];
-if($res && $res->num_rows > 0) {
-    $users = $res->fetch_all(MYSQLI_ASSOC);
-}
+$id = $_GET['id'] ?? 0;
+$result = mysqli_query($conn, "SELECT * FROM products WHERE id = $id");
+$product = mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
+    <title>Product Details</title>
 </head>
+
 <body>
-    <h1>Product</h1>
-      <?php foreach($users as $user) : ?>
-                <p>Product Name :<?php echo $user['product_name']; ?></p>
-                <p>Price :<?php echo $user['price']; ?></p>
-                <p>Description :<?php echo $user['description']; ?></p>
-            <?php endforeach; ?>
+    <h1><?= htmlspecialchars($product['product_name']) ?></h1>
+    <p>Price: $<?= $product['price'] ?></p>
+    <p>Description: <?= htmlspecialchars($product['description']) ?></p>
+    <a href="index.php">Back to Store</a>
 </body>
+
 </html>
