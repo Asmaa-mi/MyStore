@@ -26,15 +26,11 @@ if($_SERVER['REQUEST_METHOD']== "POST") {
     if(empty($username)) {
         $errors['username'] = "Username is required";
     }
-    $check_email = mysqli_query($conn, "SELECT * FROM users WHERE email='$email'");
     if(empty($email)) {
         $errors['email'] = "Email is required";
     }
     elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = "Invalid email format"; 
-    }
-    if (mysqli_num_rows($check_email) > 0) {
-        $errors['email'] = "This email is already registered";
     }
     if(empty($age)) {
         $errors['age'] = "Age is required";
@@ -61,8 +57,6 @@ if($_SERVER['REQUEST_METHOD']== "POST") {
         echo "<h3>Create Account Successfuly</h3>";
     }
 }
-$sql = "INSERT INTO users (username, email, age, password) VALUES ('$username', '$email', '$age', '$password')";
-        $result = mysqli_query($conn, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
