@@ -1,0 +1,93 @@
+/* login-style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+form {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color:  #c2185b;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+button a{
+    text-decoration: none;
+    color: #fff;
+
+
+}
+button:hover {
+    background-color:#fff;
+ 
+}
+button:hover a{
+    color:  #c2185b;
+}
+
+h3 {
+    text-align: center;
+    color: #555;
+}
+
+h3 a{
+      text-decoration: none;
+      color: #d81b60;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.links {
+    text-align: center;
+    margin-top: 20px;
+}
