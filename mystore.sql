@@ -41,7 +41,7 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id`, `product_name`, `price`, `description`) VALUES
 (1, 'Cake Strawberry', 23.5, 'طبقات من الكيك الإسفنجي الفانيليا الطري، محشوة بكريمة الفراولة الغنية، ومغطاة بقطع الفراولة الطازجة');
 
--- --------------------------------------------------------
+-- ----------------------------------------------------------
 
 --
 -- Table structure for table `users`
