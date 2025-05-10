@@ -46,14 +46,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="login-styles.css">
 </head>
 
 <body>
-    <h1>Login</h1>
+ 
     <form method="POST">
         <div>
             <label for="email">Email</label>
-            <input type="text" name="email" id="email" value="<?= htmlspecialchars($email); ?>">
+            <input type="text" name="email" id="email"  placeholder =" Enter your email  " value="<?= htmlspecialchars($email); ?>">
         </div>
         <div>
             <?php if (isset($errors['email'])): ?>
@@ -63,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <br>
         <div>
             <label for="password">Password</label>
-            <input type="password" name="password" id="password">
+            <input type="password" id="password" name="password" placeholder =" enter your pass  " required>
         </div>
         <div>
             <?php if (isset($errors['password'])): ?>
@@ -76,9 +77,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
         <br>
         <h3><a href="products.php">Your Products</a></h3>
-        <h3 style="color: blue;">Do not have Account?</h3>
-        <a href="register.php">Create Account</a>
+        <h3 style="color:blue;"><a href="register.php">Do not have Account?</a></h3>
+        
     </form>
 </body>
-
 </html>
